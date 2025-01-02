@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import { Link } from 'gestalt';
 import { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrClose } from 'react-icons/gr';
+import { NavLink } from 'react-router';
 import { Logo } from './Logo';
 import { footerAndHeaderSharedClassName } from './utils';
 
@@ -18,48 +18,40 @@ export const getNavLinkCollection = ({
   className = 'block px-4 py- text-black',
 }: GetNavLinkCollectionParams = {}) => [
   <li key={`${id}-${baseNavItemId}-home`}>
-    <Link
-      href="/"
-      tapStyle="compress"
-      underline="hover"
-      accessibilityLabel="Navigate to home page."
-      dataTestId={`${id}-${baseNavItemId}-home`}
+    <NavLink
+      to={basePath}
+      id={`${id}-${baseNavItemId}-home`}
+      aria-label="Navigate to home page."
     >
       <p className={clsx(className, 'hover:text-blue-600')}>Home</p>
-    </Link>
+    </NavLink>
   </li>,
   <li key={`${id}-${baseNavItemId}-projects`}>
-    <Link
-      href={`${basePath}/projects`}
-      tapStyle="compress"
-      underline="hover"
-      accessibilityLabel="Navigate to project list page."
-      dataTestId={`${id}-${baseNavItemId}-projects`}
+    <NavLink
+      to={`${basePath}/projects`}
+      id={`${id}-${baseNavItemId}-projects`}
+      aria-label="Navigate to project list page."
     >
       <p className={clsx(className, 'hover:text-blue-600')}>Projects</p>
-    </Link>
+    </NavLink>
   </li>,
   <li key={`${id}-${baseNavItemId}-about`}>
-    <Link
-      href={`${basePath}/about`}
-      tapStyle="compress"
-      underline="hover"
-      accessibilityLabel="Navigate to 'about me' page and find out more details about me."
-      dataTestId={`${id}-${baseNavItemId}-about`}
+    <NavLink
+      to={`${basePath}/about`}
+      id={`${id}-${baseNavItemId}-about`}
+      aria-label="Navigate to 'about me' page and find out more details about me."
     >
       <p className={clsx(className, 'hover:text-blue-600')}>About</p>
-    </Link>
+    </NavLink>
   </li>,
   <li key={`${id}-${baseNavItemId}-contact`}>
-    <Link
-      href={`${basePath}/contact`}
-      tapStyle="compress"
-      underline="hover"
-      accessibilityLabel="Navigate to contact page and send me an email."
-      dataTestId={`${id}-${baseNavItemId}-contact`}
+    <NavLink
+      to={`${basePath}/contact`}
+      id={`${id}-${baseNavItemId}-contact`}
+      aria-label="Navigate to contact page and send me an email."
     >
       <p className={clsx(className, 'hover:text-blue-600')}>Contact</p>
-    </Link>
+    </NavLink>
   </li>,
 ];
 

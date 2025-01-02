@@ -17,7 +17,7 @@ export const Footer = () => {
         </div>
         <div>
           <h3 className="mb-2 text-xl font-semibold">Quick Links</h3>
-          {footerNavLinkCollection.map((navLink) => navLink)}
+          {footerNavLinkCollection.map((link) => link)}
         </div>
         <div>
           <h3 className="mb-2 text-xl font-semibold">Follow</h3>
