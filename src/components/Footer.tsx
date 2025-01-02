@@ -15,13 +15,18 @@ export const Footer = () => {
           <p>Email: support@example.com</p>
           <p>Phone: +1 234 567 890</p>
         </div>
-        <div>
-          <h3 className="mb-2 text-xl font-semibold">Quick Links</h3>
-          {footerNavLinkCollection.map((link) => link)}
+        <div className="flex w-full flex-col items-center">
+          <div className="w-fit">
+            <h3 className="mb-2 text-xl font-semibold">Quick Links</h3>
+            {footerNavLinkCollection.map((link) => link)}
+          </div>
         </div>
-        <div>
-          <h3 className="mb-2 text-xl font-semibold">Follow</h3>
-          <SocialMediaContactRow baseId="footer" />
+        <div className="flex w-full">
+          <div className="flex-1" />
+          <div className="flex w-fit flex-col content-end align-bottom">
+            <h3 className="mb-2 text-xl font-semibold">Follow</h3>
+            <SocialMediaContactRow baseId="footer" />
+          </div>
         </div>
       </div>
     </footer>

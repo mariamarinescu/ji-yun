@@ -1,5 +1,5 @@
-import { Link } from 'gestalt';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { NavLink } from 'react-router';
 
 interface SocialMediaContactRowProps {
   className?: string;
@@ -11,46 +11,40 @@ export const SocialMediaContactRow = ({
   className = 'text-5xl',
 }: SocialMediaContactRowProps) => {
   return (
-    <ul className="flex gap-4">
+    <ul className="flex w-fit gap-4">
       <li key={`${baseId}-facebook-icon-redirect`}>
-        <Link
-          href="https://www.facebook.com/jiyun.pahk"
+        <NavLink
+          to="https://www.facebook.com/jiyun.pahk"
           target="blank"
-          tapStyle="compress"
-          underline="hover"
-          accessibilityLabel="Navigate to my facebook profile."
-          dataTestId={`${baseId}-facebook-icon-redirect`}
+          aria-label="Navigate to my facebook profile."
+          id={`${baseId}-facebook-icon-redirect`}
         >
           <FaFacebook className={className} />
-        </Link>
+        </NavLink>
       </li>
       <li key={`${baseId}-instagram-icon-redirect`}>
-        <Link
-          href="https://www.instagram.com/nuyijkhap"
+        <NavLink
+          to="https://www.instagram.com/nuyijkhap"
           target="blank"
-          tapStyle="compress"
-          underline="hover"
-          accessibilityLabel="Navigate to my facebook profile."
-          dataTestId={`${baseId}-facebook-icon-redirect`}
+          aria-label="Navigate to my facebook profile."
+          id={`${baseId}-facebook-icon-redirect`}
         >
           <FaInstagram
             className={className}
             target="blank"
             to="https://www.instagram.com/nuyijkhap"
           />
-        </Link>
+        </NavLink>
       </li>
       <li key={`${baseId}-linkedin-icon-redirect`}>
-        <Link
-          href="https://www.linkedin.com/in/jiyunpahk"
+        <NavLink
+          to="https://www.linkedin.com/in/jiyunpahk"
           target="blank"
-          tapStyle="compress"
-          underline="hover"
-          accessibilityLabel="Navigate to my facebook profile."
-          dataTestId={`${baseId}-facebook-icon-redirect`}
+          aria-label="Navigate to my facebook profile."
+          id={`${baseId}-facebook-icon-redirect`}
         >
           <FaLinkedin className={className} />
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );
