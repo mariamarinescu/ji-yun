@@ -1,15 +1,10 @@
 import { motion } from 'framer-motion';
+import { Project as ProjectType } from 'interfaces';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-interface ProjectProps {
-  title?: string;
-  category?: string;
-  id?: string;
-  image?: any;
-}
-
-export const Project: FC<ProjectProps> = ({ id, title, category, image }) => {
+export const Project: FC<{ project: ProjectType }> = ({ project }) => {
+  const { id, client, img, tags } = project;
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,17 +19,17 @@ export const Project: FC<ProjectProps> = ({ id, title, category, image }) => {
         <div className="bg-secondary-light dark:bg-ternary-dark mb-10 cursor-pointer rounded-xl shadow-lg hover:shadow-xl sm:mb-0">
           <div>
             <img
-              src={image}
+              src={img}
               className="rounded-t-xl border-none"
               alt="Single Project"
             />
           </div>
           <div className="px-4 py-6 text-center">
             <p className="font-general-medium text-ternary-dark dark:text-ternary-light mb-2 text-lg md:text-xl">
-              {title}
+              {client}
             </p>
             <span className="text-ternary-dark dark:text-ternary-light text-lg">
-              {category}
+              {tags.map((tag) => tag).join(', ')}
             </span>
           </div>
         </div>

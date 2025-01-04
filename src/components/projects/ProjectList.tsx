@@ -39,13 +39,7 @@ export const ProjectList = () => {
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
         {projects.map((project) => (
-          <Project
-            title={project.title}
-            category={project.category}
-            image={project.img}
-            key={project.id}
-            id={project.id.toString()}
-          />
+          <Project project={project} key={project.id} />
         ))}
       </div>
     </section>
