@@ -4,9 +4,9 @@ import { projectsData } from 'src/data';
 import { Project } from './Project';
 
 export const ProjectList = () => {
-  const [projects, setProjects] = useState(projectsData);
-  const [searchProject, setSearchProject] = useState('');
-  const [selectProject, setSelectProject] = useState('');
+  const [projects] = useState(projectsData);
+  const [, setSearchProject] = useState('');
+  // const [selectProject, setSelectProject] = useState('');
 
   return (
     <section className="mt-5 py-5 sm:mt-10 sm:py-10">

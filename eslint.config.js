@@ -31,7 +31,6 @@ export default [
       importPlugin,
       prettier,
       '@typescript-eslint',
-      'unused-imports',
       'simple-import-sort',
       '@typescript-eslint',
     ],
