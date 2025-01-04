@@ -54,12 +54,17 @@ export default [
       'react/no-deprecated': 'warn',
       'react/no-unknown-property': 'warn',
       'react/self-closing-comp': 'warn',
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
       'import/order': [
         'warn',
         {
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+          ],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -75,6 +80,13 @@ export default [
       'jsx-a11y/click-events-have-key-events': 'warn',
       'jsx-a11y/no-static-element-interactions': 'warn',
       'prettier/prettier': 'warn',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': [
+        'warn',
+        {
+          additionalHooks: '(useRecoilCallback|useRecoilTransaction_UNSTABLE)',
+        },
+      ],
     },
   },
   prettier,
