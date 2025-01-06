@@ -1,4 +1,8 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from 'react-router-dom';
 import { ErrorElement, Layout } from './components';
 import { About, Contact, Profile, Project, Projects } from './pages';
 
@@ -13,7 +17,10 @@ const router = createBrowserRouter([
         path: `${basePath}/about`,
         element: <About />,
       },
-
+      {
+        path: basePath,
+        element: <Navigate to={`${basePath}/about`} replace />,
+      },
       {
         path: `${basePath}/projects`,
         element: <Projects />,
