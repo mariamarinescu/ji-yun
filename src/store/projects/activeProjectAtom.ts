@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
-import { Project } from 'src/interfaces/Project';
+import { Project } from 'src/interfaces';
 
 export const activeProjectAtom = atom<Project | null>({
-  key: 'projects/activeProject',
+  key: 'projects/activeProjectAtom',
   default: null,
 });

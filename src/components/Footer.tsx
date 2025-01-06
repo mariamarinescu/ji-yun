@@ -16,8 +16,10 @@ export const Footer = () => {
           <p>Phone: +1 234 567 890</p>
         </div>
         <div className="flex w-full flex-col items-center">
-          <div className="w-fit">
-            <h3 className="mb-2 text-xl font-semibold">Quick Links</h3>
+          <div className="w-fit text-left">
+            <h3 className="mb-2 text-left text-xl font-semibold">
+              Quick Links
+            </h3>
             {footerNavLinkCollection.map((link) => link)}
           </div>
         </div>

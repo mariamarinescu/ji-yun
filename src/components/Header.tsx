@@ -15,15 +15,26 @@ type GetNavLinkCollectionParams = {
 };
 export const getNavLinkCollection = ({
   id = 'base',
-  className = 'block px-4 py- text-black',
+  className = 'block px-4',
 }: GetNavLinkCollectionParams = {}) => [
-  <li key={`${id}-${baseNavItemId}-home`}>
+  <li key={`${id}-${baseNavItemId}-about`}>
     <NavLink
-      to={basePath}
-      id={`${id}-${baseNavItemId}-home`}
-      aria-label="Navigate to home page."
+      to={`${basePath}/about`}
+      className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
+      id={`${id}-${baseNavItemId}-about`}
+      aria-label="Navigate to About page."
     >
-      <p className={clsx(className, 'hover:text-blue-600')}>Home</p>
+      <p className={clsx(className, 'hover:text-blue-600')}>About</p>
+    </NavLink>
+  </li>,
+  <li key={`${id}-${baseNavItemId}-profile`}>
+    <NavLink
+      to={`${basePath}/profile`}
+      className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
+      id={`${id}-${baseNavItemId}-profile`}
+      aria-label="Navigate to my 'profile' page and find out more details about me."
+    >
+      <p className={clsx(className, 'hover:text-blue-600')}>Profile</p>
     </NavLink>
   </li>,
   <li key={`${id}-${baseNavItemId}-projects`}>
@@ -31,17 +42,9 @@ export const getNavLinkCollection = ({
       to={`${basePath}/projects`}
       id={`${id}-${baseNavItemId}-projects`}
       aria-label="Navigate to project list page."
+      className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
     >
       <p className={clsx(className, 'hover:text-blue-600')}>Projects</p>
-    </NavLink>
-  </li>,
-  <li key={`${id}-${baseNavItemId}-about`}>
-    <NavLink
-      to={`${basePath}/about`}
-      id={`${id}-${baseNavItemId}-about`}
-      aria-label="Navigate to 'about me' page and find out more details about me."
-    >
-      <p className={clsx(className, 'hover:text-blue-600')}>About</p>
     </NavLink>
   </li>,
   <li key={`${id}-${baseNavItemId}-contact`}>
@@ -49,6 +52,7 @@ export const getNavLinkCollection = ({
       to={`${basePath}/contact`}
       id={`${id}-${baseNavItemId}-contact`}
       aria-label="Navigate to contact page and send me an email."
+      className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
     >
       <p className={clsx(className, 'hover:text-blue-600')}>Contact</p>
     </NavLink>
@@ -74,7 +78,7 @@ export const Header = () => {
         </div>
         <ul
           className={clsx(
-            'absolute w-10/12 bg-white p-4 text-black shadow-md transition-all md:hidden md:w-auto md:gap-6 md:bg-transparent md:p-0',
+            'absolute w-10/12 bg-white p-4 shadow-md transition-all md:hidden md:w-auto md:gap-6 md:bg-transparent md:p-0',
             showMenu ? 'top-16' : 'top-[-400px]'
           )}
         >

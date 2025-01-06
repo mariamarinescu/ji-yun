@@ -1,7 +1,6 @@
-import { Project } from 'components/projects/Project';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ErrorElement, Layout } from './components';
-import { About, Contact, Home, Projects } from './pages';
+import { About, Contact, Profile, Project, Projects } from './pages';
 
 const basePath = '/ji-yun';
 
@@ -11,8 +10,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorElement />,
     children: [
       {
-        path: basePath,
-        element: <Home />,
+        path: `${basePath}/about`,
+        element: <About />,
       },
 
       {
@@ -26,8 +25,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path: `${basePath}/about`,
-        element: <About />,
+        path: `${basePath}/profile`,
+        element: <Profile />,
       },
 
       {

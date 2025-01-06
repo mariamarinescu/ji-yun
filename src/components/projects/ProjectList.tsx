@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
+import { useRecoilState } from 'recoil';
 import { projectsData } from 'src/data';
-import { Project } from './Project';
+import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
+import { ProjectCard } from './ProjectCard';
 
 export const ProjectList = () => {
   const [projects] = useState(projectsData);
   const [, setSearchProject] = useState('');
-  // const [selectProject, setSelectProject] = useState('');
+  const projectId = useRecoilState(activeProjectAtom);
+
+  console.log(projectId);
 
   return (
     <section className="mt-5 py-5 sm:mt-10 sm:py-10">
@@ -39,7 +43,7 @@ export const ProjectList = () => {
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
         {projects.map((project) => (
-          <Project project={project} key={project.id} />
+          <ProjectCard project={project} key={project.id} />
         ))}
       </div>
     </section>
