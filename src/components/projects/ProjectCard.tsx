@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Project as ProjectType } from 'interfaces';
 import { FC } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
 
@@ -16,7 +16,6 @@ import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
  */
 export const ProjectCard: FC<{ project?: ProjectType }> = ({ project }) => {
   const setProjectIdInStore = useSetRecoilState(activeProjectAtom);
-  const navigate = useNavigate();
 
   // Set the project ID in the store when the component mounts
   const setProjectId = () => {

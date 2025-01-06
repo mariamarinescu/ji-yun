@@ -42,29 +42,27 @@ export const ProjectSlider: React.FC<SliderCardProps> = ({ className }) => {
             enabled: true,
           }}
         >
-          {imageCollection.map(
-            ({ isZoomable, id, dataSwiperZoom, src, width, height, alt }) => (
-              <SwiperSlide
-                id={id}
-                key={id}
-                zoom={isZoomable}
-                className="bg-white text-white"
-              >
-                {/* <div
+          {imageCollection.map(({ isZoomable, id, src, alt }) => (
+            <SwiperSlide
+              id={id}
+              key={id}
+              zoom={isZoomable}
+              className="bg-white text-white"
+            >
+              {/* <div
                   className="swiper-zoom-container hover:cursor-zoom-in"
                   data-swiper-zoom={dataSwiperZoom || '3'}
                   data-testid="swiper-image"
                 > */}
-                <img
-                  src={src}
-                  width="100%"
-                  height="100%"
-                  alt={alt || 'Image not found!'}
-                />
-                {/* </div> */}
-              </SwiperSlide>
-            )
-          )}
+              <img
+                src={src}
+                width="100%"
+                height="100%"
+                alt={alt || 'Image not found!'}
+              />
+              {/* </div> */}
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
