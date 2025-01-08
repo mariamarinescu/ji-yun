@@ -12,8 +12,8 @@ export const Footer = () => {
       <div className="grid w-full max-w-screen-xl grid-cols-1 gap-10 md:grid-cols-3">
         <div>
           <h3 className="mb-2 text-xl font-semibold">Contact</h3>
-          <p>Email: support@example.com</p>
-          <p>Phone: +1 234 567 890</p>
+          <p>Email: pahkjiyun@gmail.com</p>
+          <p>Phone: +49 (0) 163 61 74 392</p>
         </div>
         <div className="flex w-full flex-col items-center">
           <div className="w-fit text-left">

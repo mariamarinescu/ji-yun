@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { NavLink } from 'react-router';
 
 interface SocialMediaContactRowProps {
@@ -12,16 +12,6 @@ export const SocialMediaContactRow = ({
 }: SocialMediaContactRowProps) => {
   return (
     <ul className="flex w-fit gap-4">
-      <li key={`${baseId}-facebook-icon-redirect`}>
-        <NavLink
-          to="https://www.facebook.com/jiyun.pahk"
-          target="blank"
-          aria-label="Navigate to my facebook profile."
-          id={`${baseId}-facebook-icon-redirect`}
-        >
-          <FaFacebook className={className} />
-        </NavLink>
-      </li>
       <li key={`${baseId}-instagram-icon-redirect`}>
         <NavLink
           to="https://www.instagram.com/nuyijkhap"
