@@ -1,99 +1,99 @@
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrClose } from 'react-icons/gr';
 import { NavLink } from 'react-router';
 import { Logo } from './Logo';
-import { footerAndHeaderSharedClassName } from './utils';
 
 const basePath = '/ji-yun';
 const baseNavItemId = 'nav-menu-item';
 
-type GetNavLinkCollectionParams = {
-  id?: string;
-  className?: string;
-};
-export const getNavLinkCollection = ({
-  id = 'base',
-  className = 'block px-4',
-}: GetNavLinkCollectionParams = {}) => [
-  <li key={`${id}-${baseNavItemId}-about`}>
+export const navLinkCollection = [
+  <li key={`base-${baseNavItemId}-about`}>
     <NavLink
       to={`${basePath}/about`}
       className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
-      id={`${id}-${baseNavItemId}-about`}
-      aria-label="Navigate to About page."
+      id={`base-${baseNavItemId}-about`}
+      aria-label="About Me"
     >
-      <p className={clsx(className, 'hover:text-blue-600')}>About</p>
+      <p className="block px-4 hover:text-blue-600">About</p>
     </NavLink>
   </li>,
-  <li key={`${id}-${baseNavItemId}-profile`}>
+  <li key={`base-${baseNavItemId}-profile`}>
     <NavLink
       to={`${basePath}/profile`}
       className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
-      id={`${id}-${baseNavItemId}-profile`}
-      aria-label="Navigate to my 'profile' page and find out more details about me."
+      id={`base-${baseNavItemId}-profile`}
+      aria-label="My Profile"
     >
-      <p className={clsx(className, 'hover:text-blue-600')}>Profile</p>
+      <p className="block px-4 hover:text-blue-600">Profile</p>
     </NavLink>
   </li>,
-  <li key={`${id}-${baseNavItemId}-projects`}>
+  <li key={`base-${baseNavItemId}-projects`}>
     <NavLink
       to={`${basePath}/projects`}
-      id={`${id}-${baseNavItemId}-projects`}
-      aria-label="Navigate to project list page."
+      id={`base-${baseNavItemId}-projects`}
+      aria-label="Projects"
       className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
     >
-      <p className={clsx(className, 'hover:text-blue-600')}>Projects</p>
+      <p className="block px-4 hover:text-blue-600">Projects</p>
     </NavLink>
   </li>,
-  <li key={`${id}-${baseNavItemId}-contact`}>
+  <li key={`base-${baseNavItemId}-contact`}>
     <NavLink
       to={`${basePath}/contact`}
-      id={`${id}-${baseNavItemId}-contact`}
-      aria-label="Navigate to contact page and send me an email."
+      id={`base-${baseNavItemId}-contact`}
+      aria-label="Contact me"
       className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-black')}
     >
-      <p className={clsx(className, 'hover:text-blue-600')}>Contact</p>
+      <p className="block px-4 hover:text-blue-600">Contact</p>
     </NavLink>
   </li>,
 ];
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const headerNavLinkCollection = getNavLinkCollection();
 
   return (
-    <header className={footerAndHeaderSharedClassName}>
-      <nav className="flex w-full max-w-screen-lg justify-between">
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      id="nav"
+      className="sm:container sm:mx-auto"
+    >
+      <nav className="flex w-full max-w-screen-lg justify-between lg:w-[1024px]">
         <div className="flex w-full items-center justify-between">
           <Logo />
           {/* Mobile Hamburger Menu */}
           <button
             className="m-0 md:hidden"
+            aria-label="Toggle mobile menu."
             onClick={() => setShowMenu(!showMenu)}
           >
             {showMenu ? <GrClose /> : <GiHamburgerMenu />}
           </button>
         </div>
+        {/* Mobile Menu */}
         <ul
           className={clsx(
-            'absolute w-10/12 bg-white p-4 shadow-md transition-all md:hidden md:w-auto md:gap-6 md:bg-transparent md:p-0',
+            'absolute w-10/12 bg-white p-4 shadow-lg transition-all md:hidden md:w-auto md:gap-6 md:bg-transparent md:p-0',
             showMenu ? 'top-16' : 'top-[-400px]'
           )}
         >
-          {headerNavLinkCollection.map((link) => link)}
+          {navLinkCollection.map((link) => link)}
         </ul>
 
+        {/* Desktop Menu */}
         <ul
           className={clsx(
             'hidden w-full bg-white p-4 transition-all md:relative md:flex md:w-auto md:gap-6 md:bg-transparent md:p-0 md:shadow-none',
             showMenu ? 'top-16' : 'top-0'
           )}
         >
-          {headerNavLinkCollection.map((link) => link)}
+          {navLinkCollection.map((link) => link)}
         </ul>
       </nav>
-    </header>
+    </motion.nav>
   );
 };

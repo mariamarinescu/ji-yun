@@ -7,9 +7,6 @@ export const Logo = () => (
     underline="hover"
     accessibilityLabel="Navigate to home page."
   >
-    <p className="text-2xl font-bold text-gray-800">
-      {/* <p className="flex h-10 items-center px-10 font-bold uppercase italic text-black hover:opacity-90"> */}
-      Ji Yun Pahk
-    </p>
+    <p className="text-2xl font-bold text-gray-800">Ji Yun Pahk</p>
   </Link>
 );
