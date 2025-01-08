@@ -1,10 +1,10 @@
 import { AnimatePresence } from 'framer-motion';
-import { Spinner } from 'gestalt';
 import { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import './App.css';
 import { Routes } from './Routes';
+import { Loader } from './components';
 import './index.css';
 
 function App() {
@@ -12,13 +12,7 @@ function App() {
     <AnimatePresence>
       <RecoilRoot key="anonymous">
         <Router>
-          <Suspense
-            fallback={
-              <div className="empty-centered">
-                <Spinner show />
-              </div>
-            }
-          >
+          <Suspense fallback={<Loader />}>
             <Routes />
           </Suspense>
         </Router>

@@ -15,9 +15,9 @@
 html,
 body {
   box-sizing: border-box;
-  font-size: 16px;
   scroll-behavior: smooth;
   height: 100%;
+  width: 100%;
 }
 
 *,
@@ -37,11 +37,9 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  /* height: 100%; */
 }
 
 main {
   flex-grow: 1;
   overflow-y: auto;
-  /* flex-grow: 1; */
 }

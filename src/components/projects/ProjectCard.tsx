@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { MotionLayoutWrapper } from 'components';
 import { Project as ProjectType } from 'interfaces';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,6 +14,7 @@ import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
  *
  * @returns {JSX.Element} The rendered component
  */
+
 export const ProjectCard: FC<{ project?: ProjectType }> = ({ project }) => {
   const setProjectIdInStore = useSetRecoilState(activeProjectAtom);
 
@@ -32,15 +33,7 @@ export const ProjectCard: FC<{ project?: ProjectType }> = ({ project }) => {
   // }, [setProjectId]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        ease: 'easeInOut',
-        duration: 0.7,
-        delay: 0.15,
-      }}
-    >
+    <MotionLayoutWrapper>
       <Link
         to={`/ji-yun/projects/${project?.id}`}
         aria-label="Single Project"
@@ -64,6 +57,6 @@ export const ProjectCard: FC<{ project?: ProjectType }> = ({ project }) => {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </MotionLayoutWrapper>
   );
 };
