@@ -15,7 +15,7 @@ export const projectsData = [
     year: '2014',
     location: 'Tokio, Japan',
     tags: ['Modeling Production'],
-    referenceWebsite: 'https://www.kikof.jp/',
+    referenceWebsite: 'https://www.kikof.jp',
   },
   {
     id: '2-FIKA',
@@ -49,7 +49,7 @@ export const projectsData = [
       'Photo direction',
       'Flyer Design',
     ],
-    referenceWebsite: 'https://www.skanform.com/',
+    referenceWebsite: 'https://www.skanform.com',
   },
   {
     id: '4-TASKBIBLIOTEK',

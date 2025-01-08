@@ -5,7 +5,7 @@ import { projectsData } from 'src/data';
 import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
 import { ProjectCard } from './ProjectCard';
 
-export const ProjectList = () => {
+const ProjectList = () => {
   const [projects] = useState(projectsData);
   const [, setSearchProject] = useState('');
   const projectId = useRecoilState(activeProjectAtom);
@@ -49,3 +49,5 @@ export const ProjectList = () => {
     </section>
   );
 };
+
+export default ProjectList;
