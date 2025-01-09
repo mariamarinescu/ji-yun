@@ -7,9 +7,9 @@ export const Education = () => {
       <h5 className="mt-2 text-pretty text-xl font-semibold tracking-tight text-gray-900 sm:text-2xl">
         Education
       </h5>
-      <div className="flex items-center gap-2 py-2">
-        <img src={universityLogo} width="30%" height="" alt="" />
-        <div className="gap flex-col items-start">
+      <div className="flex flex-wrap items-center gap-2 py-2">
+        <img src={universityLogo} width="30%" height="" alt="University logo" />
+        <div className="gap flex flex-col items-start">
           <p className="font-semibold text-black">Musashino Art University</p>
           <div className="gap flex items-center gap-2">
             <GrMapLocation size="30" />
