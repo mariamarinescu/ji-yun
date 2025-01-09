@@ -16,6 +16,7 @@ export const MotionLayoutWrapper: React.FC<MotionLayoutWrapperProps> = ({
         duration: 0.7,
         delay: 0.15,
       }}
+      className="sm:container sm:mx-auto"
     >
       {children}
     </motion.div>
