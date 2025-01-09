@@ -4,7 +4,7 @@ import { Footer, Header } from '..';
 
 export const Layout = () => {
   const footerAndHeaderSharedStyle =
-    'w-full mx-auto flex items-center bg-none text-black p-4 h-16';
+    'w-full mx-auto flex items-center bg-none text-black p-4 h-16 xl:max-w-screen-lg';
 
   return (
     <div className="min-w-screen flex min-h-screen w-full flex-col">
