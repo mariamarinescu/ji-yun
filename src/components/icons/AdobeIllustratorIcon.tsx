@@ -1,14 +1,15 @@
 export const AdobeIllustratorIcon: React.FC = () => (
   <svg
     fill="#000000"
-    width="100px"
-    height="100px"
+    width="40px"
+    height="40px"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 231.597 231.597"
     xmlSpace="preserve"
   >
+    <title>Adobe Illustrator icon</title>
     <g id="XMLID_449_">
       <path
         id="XMLID_450_"

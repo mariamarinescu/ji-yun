@@ -62,7 +62,7 @@ export const Header = () => {
       id="nav"
       className="sm:container sm:mx-auto"
     >
-      <nav className="flex w-full max-w-screen-lg justify-between lg:w-[1024px]">
+      <nav className="flex w-full max-w-screen-lg justify-between pr-4 lg:w-[1024px]">
         <div className="flex w-full items-center justify-between">
           <Logo />
           {/* Mobile Hamburger Menu */}
