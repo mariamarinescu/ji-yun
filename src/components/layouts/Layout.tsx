@@ -4,10 +4,11 @@ import { Footer, Header } from '..';
 
 export const Layout = () => {
   const footerAndHeaderSharedStyle =
-    'w-full xl:max-w-screen-lg mx-auto flex items-center justify-between bg-none text-black p-4 h-16';
+    'w-full mx-auto flex items-center bg-none text-black p-4 h-16';
+
   return (
-    <div className="flex min-h-screen w-screen flex-col">
-      <div className="shadow-bottom-md w-screen">
+    <div className="min-w-screen flex min-h-screen w-full flex-col">
+      <div className="w-full shadow-bottom-md">
         <header className={footerAndHeaderSharedStyle}>
           <Header />
         </header>
@@ -20,7 +21,7 @@ export const Layout = () => {
       >
         <Outlet />
       </main>
-      <div className="shadow-top-md w-screen">
+      <div className="w-full shadow-top-md">
         <footer className={footerAndHeaderSharedStyle}>
           <Footer />
         </footer>
