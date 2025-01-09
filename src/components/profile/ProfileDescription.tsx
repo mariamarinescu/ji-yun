@@ -13,7 +13,7 @@ export const ProfileDescription = () => {
         <span className="text-3xl/10 font-bold text-gray-900"> ”</span>
       </p>
       <div className="flex h-fit w-full flex-col gap-4 py-4">
-        <p className="font-caveat text-4xl font-bold">Ji Yun Pahk</p>
+        <p className="font-caveat ml-2 text-4xl font-bold">Ji Yun Pahk</p>
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
             <ProfileIcon />
