@@ -101,7 +101,7 @@ const MobileNavigationMenu: React.FC<DefaultProps> = ({
   return (
     <ul
       className={clsx(
-        'absolute left-0 z-50 mx-auto flex h-fit w-full flex-col gap-7 bg-white p-8 text-2xl shadow-lg transition-all md:hidden',
+        'absolute left-0 z-50 mx-auto flex h-fit w-full flex-col gap-7 bg-white p-8 text-2xl shadow-lg transition-all duration-700 md:hidden',
         showMenu ? 'top-20' : 'top-[-400px]'
       )}
     >
