@@ -21,6 +21,7 @@
     "react-responsive-modal": "^6.4.2",
     "react-router-dom": "^7.1.1",
     "recoil": "^0.7.7",
+    "rollup": "^4.30.1",
     "swiper": "^11.2.0",
     "tailwindcss-children": "^2.1.0"
   },
