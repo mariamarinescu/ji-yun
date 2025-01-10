@@ -12,8 +12,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    # env:  # Add env secrets here
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -24,9 +22,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
@@ -72,4 +68,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages
+          publish_branch: gh-pages-preview
