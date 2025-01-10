@@ -11,7 +11,7 @@ function App() {
   return (
     <AnimatePresence>
       <RecoilRoot key="anonymous">
-        <Router>
+        <Router basename="/ji-yun">
           <Suspense fallback={<Loader />}>
             <Routes />
           </Suspense>
