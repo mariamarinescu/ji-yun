@@ -2,8 +2,6 @@ import { MotionLayoutWrapper } from 'components';
 import { Project as ProjectType } from 'interfaces';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { useSetRecoilState } from 'recoil';
-import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
 
 /**
  * Project component displays a single project with its details.
@@ -15,29 +13,16 @@ import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
  * @returns {JSX.Element} The rendered component
  */
 
-export const ProjectCard: FC<{ project?: ProjectType }> = ({ project }) => {
-  const setProjectIdInStore = useSetRecoilState(activeProjectAtom);
-
-  // Set the project ID in the store when the component mounts
-  const setProjectId = () => {
-    if (project?.id) {
-      setProjectIdInStore(project);
-    }
-  };
-
-  // // Reset the project ID in the store when the component unmounts
-  // useEffect(() => {
-  //   return () => {
-  //     setProjectIdInStore(null);
-  //   };
-  // }, [setProjectId]);
-
+export const ProjectCard: FC<{
+  project?: ProjectType;
+  setProjectDetailsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ project, setProjectDetailsModalOpen }) => {
   return (
     <MotionLayoutWrapper>
       <Link
         to={`/ji-yun/projects/${project?.id}`}
         aria-label="Single Project"
-        onClick={setProjectId}
+        onClick={() => setProjectDetailsModalOpen(true)}
       >
         <div className="bg-secondary-light dark:bg-ternary-dark mb-10 cursor-pointer rounded-xl shadow-lg hover:shadow-xl sm:mb-0">
           <div>

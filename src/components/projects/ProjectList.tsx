@@ -1,23 +1,73 @@
-import { useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useCallback, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { projectsData } from 'src/data';
-import { activeProjectAtom } from '../../store/projects/activeProjectAtom';
+import { Project } from 'src/pages/Project';
 import { ProjectCard } from './ProjectCard';
+
+interface Project {
+  id: string;
+  client: string;
+  description: string;
+  headline: string;
+  img: string;
+  year: string;
+  location: string;
+  tags: string[];
+  referenceWebsite?: string;
+}
 
 const ProjectList = () => {
   const [projects] = useState(projectsData);
-  const projectId = useRecoilState(activeProjectAtom);
+  const [openProjectDetailsModal, setProjectDetailsModalOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const { projectId } = useParams();
+  const navigate = useNavigate();
 
-  console.log(projectId);
+  const setUpNewProject = useCallback(() => {
+    if (projectId) {
+      const activeProjectData = projectsData.find(
+        (project) => project.id === projectId
+      );
+      if (activeProjectData) {
+        setActiveProject(activeProjectData);
+      }
+    }
+  }, [projectId]);
+
+  useEffect(() => setUpNewProject(), [setUpNewProject]);
+
+  useEffect(() => {
+    if (activeProject) {
+      setProjectDetailsModalOpen(true);
+    }
+  }, [activeProject]);
+
+  const closeProjectDetailsModal = () => {
+    setProjectDetailsModalOpen(false);
+    navigate('/ji-yun/projects', { replace: true });
+  };
 
   return (
-    <section className="py-5 sm:py-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard project={project} key={project.id} />
-        ))}
-      </div>
-    </section>
+    <>
+      {openProjectDetailsModal ? (
+        <Project
+          activeProject={activeProject}
+          setProjectDetailsModalOpen={closeProjectDetailsModal}
+          projectDetailsModalOpen={openProjectDetailsModal}
+        />
+      ) : null}
+      <section className="py-5 sm:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
+          {projects.map((project) => (
+            <ProjectCard
+              project={project}
+              key={project.id}
+              setProjectDetailsModalOpen={setProjectDetailsModalOpen}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
