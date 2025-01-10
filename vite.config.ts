@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    base: '/ji-yun',
+    base: '/', // Set the base to '/' for GitHub Pages with custom domain
     define: {
       'process.env': env,
     },
