@@ -6,7 +6,6 @@ import { GrClose } from 'react-icons/gr';
 import { NavLink } from 'react-router';
 import { Logo } from './Logo';
 
-const basePath = '/ji-yun';
 const baseNavItemId = 'nav-menu-item';
 const navLinkLabelDefaultClassName = 'block hover:text-blue-600';
 
@@ -20,7 +19,7 @@ export const getNavLinkCollection = (
 ) => [
   <li key={`${id}-${baseNavItemId}-about`}>
     <NavLink
-      to={`${basePath}/about`}
+      to={`/about`}
       className={({ isActive }) => getNavLinkClassName(isActive)}
       id={`${id}-${baseNavItemId}-about`}
       aria-label="About Me"
@@ -31,7 +30,7 @@ export const getNavLinkCollection = (
   </li>,
   <li key={`${id}-${baseNavItemId}-profile`}>
     <NavLink
-      to={`${basePath}/profile`}
+      to={`/profile`}
       className={({ isActive }) => getNavLinkClassName(isActive)}
       id={`${id}-${baseNavItemId}-profile`}
       aria-label="My Profile"
@@ -44,7 +43,7 @@ export const getNavLinkCollection = (
   </li>,
   <li key={`${id}-${baseNavItemId}-projects`}>
     <NavLink
-      to={`${basePath}/projects`}
+      to={`/projects`}
       id={`${id}-${baseNavItemId}-projects`}
       aria-label="Projects"
       className={({ isActive }) => getNavLinkClassName(isActive)}
@@ -57,7 +56,7 @@ export const getNavLinkCollection = (
   </li>,
   <li key={`${id}-${baseNavItemId}-contact`}>
     <NavLink
-      to={`${basePath}/contact`}
+      to={`/contact`}
       id={`${id}-${baseNavItemId}-contact`}
       aria-label="Contact me"
       className={({ isActive }) => getNavLinkClassName(isActive)}

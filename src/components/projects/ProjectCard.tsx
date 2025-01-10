@@ -20,7 +20,7 @@ export const ProjectCard: FC<{
   return (
     <MotionLayoutWrapper>
       <Link
-        to={`/ji-yun/projects/${project?.id}`}
+        to={`/projects/${project?.id}`}
         aria-label="Single Project"
         onClick={() => setProjectDetailsModalOpen(true)}
       >

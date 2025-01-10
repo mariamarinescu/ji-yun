@@ -44,7 +44,7 @@ const ProjectList = () => {
 
   const closeProjectDetailsModal = () => {
     setProjectDetailsModalOpen(false);
-    navigate('/ji-yun/projects', { replace: true });
+    navigate('/projects', { replace: true });
   };
 
   return (
