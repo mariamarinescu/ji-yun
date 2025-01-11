@@ -46,7 +46,7 @@ export const Project: React.FC<ProjectProps> = ({
                       className="cursor-pointer duration-300 hover:text-indigo-500 hover:underline dark:hover:text-indigo-400"
                       aria-label="Project Website"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       {activeProject.referenceWebsite}
                     </a>
