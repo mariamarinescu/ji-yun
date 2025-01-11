@@ -6,7 +6,7 @@ This is the portfolio website for **Ji Yun Pahk**, a talented brand designer. Th
 
 ## 🚀 Live Preview
 
-The portfolio is live at: [https://mariamarinescu.github.io/ji-yun/](https://mariamarinescu.github.io/ji-yun/)
+The portfolio is live at: [https://rriamarria.de](https://rriamarria.de/)
 
 ## 🛠️ Technologies Used
 
