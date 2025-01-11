@@ -35,7 +35,7 @@ export const ProjectCard: FC<{
         aria-label="Single Project"
         onClick={() => setProjectDetailsModalOpen(true)}
       >
-        <div className="bg-secondary-light dark:bg-ternary-dark mb-10 h-[400px] w-[370px] cursor-pointer rounded-sm shadow-lg hover:shadow-xl sm:mb-0">
+        <div className="bg-secondary-light dark:bg-ternary-dark mb-10 h-[400px] w-[320px] cursor-pointer rounded-sm shadow-lg hover:shadow-xl sm:mb-0">
           <div>
             <img
               src={project?.img}

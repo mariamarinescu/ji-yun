@@ -45,8 +45,8 @@ const ProjectList = () => {
           projectDetailsModalOpen={openProjectDetailsModal}
         />
       ) : null}
-      <section className="py-5 sm:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
+      <section className="w-full py-5 sm:py-10">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard
               project={project as ProjectType}
