@@ -29,9 +29,9 @@ const Profile = () => {
           </div>
           <div className="-mt-12 pt-7 lg:sticky lg:top-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden 2xl:ml-0">
             <img
-              className="rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+              className="rounded-sm bg-gray-900 shadow-xl ring-1 ring-gray-400/10"
               src={profileImg}
-              alt=""
+              alt="Profile Image"
             />
           </div>
         </div>

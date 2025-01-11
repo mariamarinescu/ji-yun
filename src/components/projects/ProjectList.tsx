@@ -18,7 +18,7 @@ const ProjectList = () => {
         (project) => project.id === projectId
       );
       if (activeProjectData) {
-        setActiveProject(activeProjectData);
+        setActiveProject(activeProjectData as ProjectType);
       }
     }
   }, [projectId]);
@@ -49,7 +49,7 @@ const ProjectList = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard
-              project={project}
+              project={project as ProjectType}
               key={project.id}
               setProjectDetailsModalOpen={setProjectDetailsModalOpen}
             />
