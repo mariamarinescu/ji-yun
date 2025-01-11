@@ -2,7 +2,7 @@ import { Link } from 'gestalt';
 
 export const Logo = () => (
   <Link
-    href="/ji-yun/about"
+    href="/about"
     tapStyle="compress"
     underline="hover"
     accessibilityLabel="Navigate to home page."
