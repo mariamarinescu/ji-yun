@@ -35,7 +35,7 @@ export const ProjectCard: FC<{
         aria-label="Single Project"
         onClick={() => setProjectDetailsModalOpen(true)}
       >
-        <div className="bg-secondary-light dark:bg-ternary-dark mb-10 cursor-pointer rounded-sm shadow-lg hover:shadow-xl sm:mb-0">
+        <div className="bg-secondary-light dark:bg-ternary-dark mb-10 h-[400px] w-[370px] cursor-pointer rounded-sm shadow-lg hover:shadow-xl sm:mb-0">
           <div>
             <img
               src={project?.img}
@@ -47,7 +47,7 @@ export const ProjectCard: FC<{
             <p className="font-general-medium text-ternary-dark dark:text-ternary-light mb-2 text-lg md:text-xl">
               {project?.client}
             </p>
-            <span className="text-ternary-dark dark:text-ternary-light flex flex-wrap gap-2">
+            <span className="text-ternary-dark dark:text-ternary-light my-auto flex h-full flex-wrap gap-2">
               {project?.tags.map((tag) => (
                 <div
                   key={tag}

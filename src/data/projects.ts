@@ -153,8 +153,8 @@ export const projectsData = [
       'Corporate Identity Design',
       'Package design',
       'Brand Identity Design',
-      'Photo direction',
       'Private Brand Products',
+      'Photo direction',
     ],
     referenceWebsite: 'https://wine-and-coffeehouse.de/en/cafe-bar-in-berlin',
     gallery: [
