@@ -1,10 +1,5 @@
-import {
-  Education,
-  MotionLayoutWrapper,
-  ProfileDescription,
-  SkillSet,
-} from 'components';
-
+import { MotionLayoutWrapper } from 'components/layouts';
+import { Education, ProfileDescription, SkillSet } from 'components/profile';
 import profileImg from '../assets/profile.jpeg';
 
 const Profile = () => {
@@ -29,14 +24,38 @@ const Profile = () => {
           </div>
           <div className="-mt-12 pt-7 lg:sticky lg:top-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden 2xl:ml-0">
             <img
-              className="rounded-sm bg-gray-900 shadow-xl ring-1 ring-gray-400/10"
+              className="h-auto w-full transform rounded-sm bg-gray-900 object-contain shadow-xl ring-1 ring-gray-400/10 transition-transform hover:scale-105"
               src={profileImg}
               alt="Profile Image"
+              loading="lazy" // Lazy load for better performance
+              // width="100%" // Ensure the image takes up full width of the container
+              // height="auto" // Maintain aspect ratio automatically
             />
           </div>
         </div>
       </div>
     </MotionLayoutWrapper>
+    // <MotionLayoutWrapper>
+    //   <div className="flex h-full w-full flex-col gap-1 p-4 lg:flex-row">
+    //     <div className="flex w-full flex-col pt-4 lg:w-3/4">
+    //       <ProfileDescription />
+    //       <div className="flex flex-col gap-2 text-base/7 text-gray-700">
+    //         <Education />
+    //         <SkillSet />
+    //       </div>
+    //     </div>
+    //     <div className="flex h-full w-full content-center items-start pt-0 lg:w-1/4 lg:pt-10 xl:w-2/4">
+    //       <img
+    //         className="mx-auto h-fit w-fit transform rounded-none bg-gray-900 object-contain shadow-xl ring-1 ring-gray-400/10 transition-transform hover:scale-105 md:w-full"
+    //         src={profileImg}
+    //         alt="Profile Image"
+    //         loading="lazy" // Lazy load for better performance
+    //         width="100%" // Ensure the image takes up full width of the container
+    //         height="auto" // Maintain aspect ratio automatically
+    //       />
+    //     </div>
+    //   </div>
+    // </MotionLayoutWrapper>
   );
 };
 

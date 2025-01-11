@@ -7,7 +7,7 @@ import {
 
 const iconContainerClassName = 'flex items-center gap-2';
 const skillTitleClassName =
-  'text-pretty text-lg font-semibold tracking-tight text-gray-900 sm:text-base';
+  'text-pretty text-sm font-semibold tracking-tight text-gray-900 sm:text-base';
 const iconSize = 30;
 
 const skillIconDictionary: Record<string, JSX.Element> = {
@@ -34,7 +34,7 @@ export const SkillSet = () => {
       <h5 className="mt-2 text-pretty text-xl font-semibold tracking-tight text-gray-900">
         Skillset
       </h5>
-      <div className="grid grid-cols-1 gap-6 py-6 xs:grid-cols-2">
+      <div className="flex flex-wrap gap-6 py-3">
         {skillSetNameList.map((skillName) => (
           <div className={iconContainerClassName} key={skillName}>
             {skillIconDictionary[skillName]}

@@ -1,6 +1,6 @@
 export const MicrosoftOfficeIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
-  width = '30px',
-  height = '30px',
+  width = '40px',
+  height = '40px',
   fill = '#000000',
   viewBox = '0 0 24 24',
   role = 'img',
