@@ -54,7 +54,7 @@ export const ProjectCard: FC<{
                   style={{
                     backgroundColor: projectTagListBadgeDictionary[tag],
                   }}
-                  className="h-fit w-fit rounded-sm px-2 py-1 text-[10px] text-black"
+                  className="h-fit w-fit rounded-sm px-2 py-1 text-sm text-black"
                 >
                   {tag}
                 </div>
