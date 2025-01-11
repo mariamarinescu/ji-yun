@@ -7,10 +7,10 @@ import { NavLink } from 'react-router';
 import { Logo } from './Logo';
 
 const baseNavItemId = 'nav-menu-item';
-const navLinkLabelDefaultClassName = 'block hover:text-blue-600';
+const navLinkLabelDefaultClassName = 'block hover:text-purple-900';
 
 const getNavLinkClassName = (isActive: boolean) =>
-  isActive ? 'text-blue-600' : 'text-black';
+  isActive ? 'text-purple-900' : 'text-gray-700';
 
 export const getNavLinkCollection = (
   setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>,
