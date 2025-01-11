@@ -26,10 +26,7 @@ export const ProjectSlider: React.FC<SliderCardProps> = ({
   className,
 }) => {
   return (
-    <div
-      className={clsx(className, 'h-full w-[300px]')}
-      data-testid="slider-card"
-    >
+    <div className={clsx(className, 'h-full w-9/12')} data-testid="slider-card">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Zoom, Autoplay]}
         spaceBetween={50}
