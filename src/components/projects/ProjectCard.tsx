@@ -3,6 +3,17 @@ import { Project as ProjectType } from 'interfaces';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
+const projectTagListBadgeDictionary = {
+  'Corporate Identity Design': '#d5e8eb',
+  'Brand Identity Design': '#cdeaea',
+  Illustration: '#f4d3b8',
+  'Slogan Design': '#fce9b5',
+  'Photo direction': '#d7cfe8',
+  'Private Brand Products': '#e3f5ef',
+  'Flyer Design': '#f5c6c8',
+  'Package design': '#dce1e8',
+  'Modeling Production': '#e8d5f2',
+};
 /**
  * Project component displays a single project with its details.
  * It uses Framer Motion for animations and Recoil for state management.
@@ -24,11 +35,11 @@ export const ProjectCard: FC<{
         aria-label="Single Project"
         onClick={() => setProjectDetailsModalOpen(true)}
       >
-        <div className="bg-secondary-light dark:bg-ternary-dark mb-10 cursor-pointer rounded-xl shadow-lg hover:shadow-xl sm:mb-0">
+        <div className="bg-secondary-light dark:bg-ternary-dark mb-10 cursor-pointer rounded-sm shadow-lg hover:shadow-xl sm:mb-0">
           <div>
             <img
               src={project?.img}
-              className="rounded-t-xl border-none"
+              className="rounded-sm border-none"
               alt="Single Project"
             />
           </div>
@@ -36,8 +47,18 @@ export const ProjectCard: FC<{
             <p className="font-general-medium text-ternary-dark dark:text-ternary-light mb-2 text-lg md:text-xl">
               {project?.client}
             </p>
-            <span className="text-ternary-dark dark:text-ternary-light text-lg">
-              {[project?.tags || []].map((tag) => tag).join(', ')}
+            <span className="text-ternary-dark dark:text-ternary-light flex flex-wrap gap-2">
+              {project?.tags.map((tag) => (
+                <div
+                  key={tag}
+                  style={{
+                    backgroundColor: projectTagListBadgeDictionary[tag],
+                  }}
+                  className="h-fit w-fit rounded-sm px-2 py-1 text-[10px] text-black"
+                >
+                  {tag}
+                </div>
+              ))}
             </span>
           </div>
         </div>
