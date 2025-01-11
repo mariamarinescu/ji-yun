@@ -5,6 +5,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/zoom';
 
 import { clsx } from 'clsx';
+import { ProjectSwiperImage } from 'src/interfaces';
 import {
   A11y,
   Autoplay,
@@ -14,14 +15,16 @@ import {
   Zoom,
 } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { imageCollection } from './imageCollection';
 
 interface SliderCardProps {
+  imageCollection: ProjectSwiperImage[];
   className?: string;
 }
 
-export const ProjectSlider: React.FC<SliderCardProps> = ({ className }) => {
-  console.log(imageCollection[2].src);
+export const ProjectSlider: React.FC<SliderCardProps> = ({
+  imageCollection,
+  className,
+}) => {
   return (
     <div
       className={clsx(className, 'h-full w-[300px]')}
@@ -45,11 +48,11 @@ export const ProjectSlider: React.FC<SliderCardProps> = ({ className }) => {
           enabled: true,
         }}
       >
-        {imageCollection.map(({ isZoomable, id, src, alt }) => (
+        {imageCollection.map((image: ProjectSwiperImage) => (
           <SwiperSlide
-            id={id}
-            key={id}
-            zoom={isZoomable}
+            id={image.id}
+            key={image.id}
+            zoom={image.isZoomable}
             className="bg-white text-white"
           >
             {/* <div
@@ -58,10 +61,10 @@ export const ProjectSlider: React.FC<SliderCardProps> = ({ className }) => {
                   data-testid="swiper-image"
                 > */}
             <img
-              src={src}
+              src={image.src}
               width="100%"
               height="100%"
-              alt={alt || 'Image not found!'}
+              alt={image.alt || 'Image not found!'}
             />
             {/* </div> */}
           </SwiperSlide>

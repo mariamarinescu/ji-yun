@@ -1,21 +1,11 @@
 import { Modal } from 'components/Modal';
 import { ProjectSlider } from 'components/projects';
+import { Project as ProjectType } from 'interfaces';
 
-interface Project {
-  id: string;
-  client: string;
-  description: string;
-  headline: string;
-  img: string;
-  year: string;
-  location: string;
-  tags: string[];
-  referenceWebsite?: string;
-}
 interface ProjectProps {
   setProjectDetailsModalOpen?: () => void;
   projectDetailsModalOpen?: boolean;
-  activeProject?: Project | null;
+  activeProject?: ProjectType | null;
 }
 
 export const Project: React.FC<ProjectProps> = ({
@@ -61,7 +51,7 @@ export const Project: React.FC<ProjectProps> = ({
 
           <div className="mt-10 w-full flex-col gap-4 text-left sm:mt-0 sm:flex sm:w-2/3">
             <div className="flex h-fit w-full justify-center bg-transparent">
-              <ProjectSlider />
+              <ProjectSlider imageCollection={activeProject?.gallery} />
             </div>
             <div className="w-full">{activeProject?.description}</div>
           </div>

@@ -1,3 +1,5 @@
+import { ProjectSwiperImage } from './ProjectSwiperImage';
+
 export interface Project {
   id: string;
   client: string;
@@ -7,5 +9,6 @@ export interface Project {
   year: string;
   location: string;
   tags: string[];
-  referenceWebsite: string | undefined;
+  referenceWebsite?: string;
+  gallery: ProjectSwiperImage[];
 }

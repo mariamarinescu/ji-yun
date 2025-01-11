@@ -1,25 +1,14 @@
+import { Project as ProjectType } from 'interfaces';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { projectsData } from 'src/data';
 import { Project } from 'src/pages/Project';
 import { ProjectCard } from './ProjectCard';
 
-interface Project {
-  id: string;
-  client: string;
-  description: string;
-  headline: string;
-  img: string;
-  year: string;
-  location: string;
-  tags: string[];
-  referenceWebsite?: string;
-}
-
 const ProjectList = () => {
   const [projects] = useState(projectsData);
   const [openProjectDetailsModal, setProjectDetailsModalOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [activeProject, setActiveProject] = useState<ProjectType | null>(null);
   const { projectId } = useParams();
   const navigate = useNavigate();
 
