@@ -1,13 +1,24 @@
-export const AdobeIllustratorIcon: React.FC = () => (
+export const AdobeIllustratorIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
+  fill = '#000000',
+  width = '40px',
+  height = '40px',
+  version = '1.1',
+  xmlns = 'http://www.w3.org/2000/svg',
+  xmlnsXlink = 'http://www.w3.org/1999/xlink',
+  viewBox = '0 0 231.597 231.597',
+  xmlSpace = 'preserve',
+  ...restProps
+}) => (
   <svg
-    fill="#000000"
-    width="40px"
-    height="40px"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 231.597 231.597"
-    xmlSpace="preserve"
+    fill={fill}
+    width={width}
+    height={height}
+    version={version}
+    xmlns={xmlns}
+    xmlnsXlink={xmlnsXlink}
+    viewBox={viewBox}
+    xmlSpace={xmlSpace}
+    {...restProps}
   >
     <title>Adobe Illustrator icon</title>
     <g id="XMLID_449_">

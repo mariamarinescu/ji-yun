@@ -1,14 +1,26 @@
-export const AdobeInDesignIcon = () => (
+export const AdobeInDesignIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
+  fill = '#000000',
+  version = '1.1',
+  xmlns = 'http://www.w3.org/2000/svg',
+  xmlnsXlink = 'http://www.w3.org/1999/xlink',
+  width = '40px',
+  height = '40px',
+  viewBox = '0 0 512 512',
+  enableBackground = 'new 0 0 512 512',
+  xmlSpace = 'preserve',
+  ...restProps
+}) => (
   <svg
-    fill="#000000"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    width="40px"
-    height="40px"
-    viewBox="0 0 512 512"
-    enable-background="new 0 0 512 512"
-    xmlSpace="preserve"
+    fill={fill}
+    version={version}
+    xmlns={xmlns}
+    xmlnsXlink={xmlnsXlink}
+    width={width}
+    height={height}
+    viewBox={viewBox}
+    enableBackground={enableBackground}
+    xmlSpace={xmlSpace}
+    {...restProps}
   >
     <title>Adobe InDesign icon</title>
     <g id="2069a460dcf28295e231f3111e035a9d">
