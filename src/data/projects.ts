@@ -19,6 +19,7 @@ import TASK01 from '../images/TASK01.jpg';
 import TASK02 from '../images/TASK02.jpg';
 import TASK03 from '../images/TASK03.jpg';
 import TASK04 from '../images/TASK04.jpg';
+import TASK05 from '../images/TASK05.jpg';
 import wineandcoffee1 from '../images/WINEANDCOFFEEHOUSE01.jpg';
 import wineandcoffee2 from '../images/WINEANDCOFFEEHOUSE02.jpg';
 import wineandcoffee3 from '../images/WINEANDCOFFEEHOUSE03.jpg';
@@ -137,6 +138,7 @@ export const projectsData = [
       { src: TASK02, id: '4-TASKBIBLIOTEK-gallery-2', ...commonImgProps },
       { src: TASK03, id: '4-TASKBIBLIOTEK-gallery-3', ...commonImgProps },
       { src: TASK04, id: '4-TASKBIBLIOTEK-gallery-4', ...commonImgProps },
+      { src: TASK05, id: '4-TASKBIBLIOTEK-gallery-5', ...commonImgProps },
     ],
   },
   {
